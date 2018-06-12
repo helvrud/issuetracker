@@ -1,0 +1,21 @@
+# -*- coding: utf-8 -*-
+from __future__ import unicode_literals
+
+from django.db import models
+
+# Create your models here.
+
+
+# coding: utf-8
+from django.db import models
+from django.contrib.auth.models import User
+
+class Ticket(models.Model):
+    title = models.CharField(max_length=128)
+    text = models.TextField()
+    created = models.DateTimeField(auto_now=True)
+    closed = models.BooleanField(default=False)
+    user = models.ForeignKey(User,)
+
+    def __unicode__(self):
+        return self.title
