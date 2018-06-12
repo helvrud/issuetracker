@@ -1,1 +1,1 @@
-. venv/bin/activate
+. ~/issue/venv/bin/activate
