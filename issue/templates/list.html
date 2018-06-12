@@ -19,12 +19,12 @@
         {% for ticket in object_list %}
         <tr>
             
-            <td><a href="{% url 'detail' ticket.pk %}">{{ ticket.title }} <span> </span></a></td>
+            <td><a href="{% url 'detail' ticket.pk %}">{{ ticket.title }} </a></td>
             <td>{{ ticket.created|date }} </td>
-            <td>{{ ticket.sumbitter }} </td>
+            <td>{{ ticket.submitter }} </td>
             <td>{{ ticket.solver }} </td>
             <td>{{ ticket.closed|yesno:"CLOSED, OPENED" }} </td>
-            <td>{{ ticket.category.name }} </td>
+            <td>{{ ticket.get_category }} </td>
         </tr>
         {% empty %}
         <tr>
