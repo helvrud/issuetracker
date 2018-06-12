@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Bugtracker - {% block title_block %}{% endblock %}</title>
+    </head>
+    <body>
+        {% block content_block %}
+        
+
+        {% endblock %}
+        {% if user.is_authenticated %}
+            <div>Welcome, {{ user.username }}
+             | <a href="{% url 'logout' %}">Logout</a></div>
+        {% else %}
+            <div><a href="{% url 'register' %}">Register
+             | <a href="{% url 'login' %}">Login</a></div>
+        {% endif %}
+        
+        <div><a href="{% url 'add' %}">Add ticket</a></div>
+    </body>
+</html>
