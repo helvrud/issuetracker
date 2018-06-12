@@ -8,18 +8,23 @@
         <tr>
             <td>Title</td>
             <td>Created</td>
-            <td>Author</td>
+            <td>Submitter</td>
+            <td>Solver</td>
+
             <td>Status</td>
+            <td>Category</td>
         </tr>
         </thead>
         <tbody>
         {% for ticket in object_list %}
         <tr>
             
-            <td><a href="{% url 'detail' ticket.pk %}">{{ ticket.title }} &emsp</a></td>
+            <td><a href="{% url 'detail' ticket.pk %}">{{ ticket.title }} <span> </span></a></td>
             <td>{{ ticket.created|date }} </td>
-            <td>{{ ticket.user }} </td>
+            <td>{{ ticket.sumbitter }} </td>
+            <td>{{ ticket.solver }} </td>
             <td>{{ ticket.closed|yesno:"CLOSED, OPENED" }} </td>
+            <td>{{ ticket.category.name }} </td>
         </tr>
         {% empty %}
         <tr>
