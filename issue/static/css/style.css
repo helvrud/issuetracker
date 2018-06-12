@@ -96,4 +96,6 @@ body {
 }
 
 
-
+td, th {
+    padding-left: 20px;
+}
