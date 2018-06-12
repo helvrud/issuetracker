@@ -73,7 +73,7 @@ TEMPLATES = [
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
 #~ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
-STATICFILES_DIRS = (os.path.join(BASE_DIR, 'issue', 'static'),)
+#~ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'issue', 'static'),)
 WSGI_APPLICATION = 'issue.wsgi.application'
 
 
