@@ -1,0 +1,8 @@
+PassengerEnabled On
+#assengerAppRoot /home/h/helvruxw/issue.kunsthaus.ru/public_html/HelloDjango/HelloDjango
+#assengerPython /home/h/helvruxw/issue.kunsthaus.ru/public_html/venv/bin/python
+
+#assengerEnabled On
+#PassengerAppRoot /home/h/helvruxw/kunsthaus.ru/kunsthaus/kunsthaus
+#PassengerAppRoot /home/h/helvruxw/kunsthaus.ru/public_html/HelloDjango/HelloDjango
+PassengerPython /home/h/helvruxw/issue.kunsthaus.ru/venv/bin/python
