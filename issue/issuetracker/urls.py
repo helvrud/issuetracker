@@ -3,9 +3,12 @@ from django.conf.urls import include, url
 #~ from .views import IssuesListView
 #~ from .views import IssueDetailView
 from .views import *
+from django.conf import settings
+
 from django.core.urlresolvers import reverse_lazy
 from django.contrib.auth.views import login, logout
-
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from django.views.static import serve
 
 urlpatterns = [
         url(r'^$', IssuesListView.as_view(), name='index'),
@@ -19,3 +22,6 @@ urlpatterns = [
 
     
     
+# This is only needed when using runserver.
+if settings.DEBUG:
+    urlpatterns = staticfiles_urlpatterns() + urlpatterns
