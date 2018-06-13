@@ -28,8 +28,9 @@ class Category(models.Model):
 class Ticket(models.Model):
     title = models.CharField(max_length=128)
     text = models.TextField()
-    created = models.DateTimeField(auto_now=True)
+    created = models.DateTimeField(auto_now_add=True)
     closed = models.BooleanField(default=False)
+    closeddate = models.DateTimeField(null=True, blank=False, verbose_name=u'Fecha de creación', auto_now_add=False)
     submitter = models.ForeignKey(User, related_name='Submitter', blank=True, null=True)
     
     solver = models.ForeignKey(User, default=None, blank=True, related_name='Solver', null=True)

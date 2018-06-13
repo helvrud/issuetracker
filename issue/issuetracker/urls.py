@@ -7,11 +7,11 @@ from django.conf import settings
 
 from django.core.urlresolvers import reverse_lazy
 from django.contrib.auth.views import login, logout
-from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-from django.views.static import serve
-from django.contrib import admin
+#~ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+#~ from django.views.static import serve
+#~ from django.contrib import admin
 
-admin.autodiscover()
+#~ admin.autodiscover()
 
 urlpatterns = [
         url(r'^$', IssuesListView.as_view(), name='index'),
@@ -26,5 +26,5 @@ urlpatterns = [
     
     
 # This is only needed when using runserver.
-if settings.DEBUG:
-    urlpatterns = staticfiles_urlpatterns() + urlpatterns
+#~ if settings.DEBUG:
+#~ urlpatterns = staticfiles_urlpatterns() + urlpatterns

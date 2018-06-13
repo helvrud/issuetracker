@@ -2,8 +2,25 @@
 {% block title_block %}{{ object.title }}{% endblock %}
 {% block content_block %}
 <div>
-    <h1>{{ object.closed|yesno:"CLOSED, OPENED" }} - {{ object.title }}</h1>
-    <p>{{ object.user }} - {{ object.created|date }}</p>
+    <h1>{{ object.title }} ({{ object.closed|yesno:"CLOSED, OPENED" }}) </h1>
+    <p>Created by {{ object.submitter }} - {{ object.created|date:"M d, Y, H:i" }}</p>
+    {% if object.closed %}
+    <p>Closed by {{ object.solver }} - {{ object.closeddate|date:"M d, Y, H:i" }}</p>
+    {% endif %}
     <p>{{ object.text }}</p>
 </div>
+
+
+{% if user.is_authenticated %}
+    <a href="{% url 'index' %}">Back to main page</a>
+    <form action="{% url 'detail' object.id %}" method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <input type="submit" value="Submit" />
+    </form>
+{% else %}
+    <p>You should be logged in to add tickets!</p>
+{% endif %}
+
+
 {% endblock %}
