@@ -17,7 +17,15 @@ LOGIN_REDIRECT_URL = reverse_lazy('index')
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA_DIR = os.path.dirname(os.path.dirname(__file__))
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_URL = '/static/'
+#~ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'issue', 'static'),)
+
+
 print('BASE_DIR', BASE_DIR)
+print('DATA_DIR', DATA_DIR)
+print('STATIC_ROOT', STATIC_ROOT)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
@@ -70,10 +78,7 @@ TEMPLATES = [
         },
     },
 ]
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-STATIC_URL = '/static/'
-#~ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
-#~ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'issue', 'static'),)
+
 WSGI_APPLICATION = 'issue.wsgi.application'
 
 
