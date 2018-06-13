@@ -11,7 +11,7 @@ from django.contrib import admin
 from .models import *
 
 class TicketAdmin(admin.ModelAdmin):
-    list_display = ('title', 'closed','text', 'created', 'solver', 'submitter', 'get_category')
+    list_display = ('title', 'closed','text', 'created', 'solver', 'closeddate','submitter', 'get_category')
     list_filter = ['created', 'closed']
     search_fields = ['title', 'text']
     

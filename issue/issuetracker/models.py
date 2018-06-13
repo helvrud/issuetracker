@@ -30,11 +30,11 @@ class Ticket(models.Model):
     text = models.TextField()
     created = models.DateTimeField(auto_now_add=True)
     closed = models.BooleanField(default=False)
-    closeddate = models.DateTimeField(null=True, blank=False, verbose_name=u'Fecha de creación', auto_now_add=False)
+    closeddate = models.DateTimeField(null=True, blank=True, verbose_name=u'Closed date', auto_now_add=False)
     submitter = models.ForeignKey(User, related_name='Submitter', blank=True, null=True)
     
     solver = models.ForeignKey(User, default=None, blank=True, related_name='Solver', null=True)
-    category = models.ManyToManyField(Category)
+    
     def __unicode__(self):
         return self.title
     class Meta:
@@ -43,7 +43,7 @@ class Ticket(models.Model):
 
 
 
-    category      = models.ManyToManyField(Category, default=None, blank=True)
+    category      = models.ManyToManyField(Category, default=None, blank=True, verbose_name=u'Category')
     
     def get_category(self):
         return ",".join([str(p) for p in self.category.all()])
