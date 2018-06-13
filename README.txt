@@ -1,29 +1,37 @@
-Django установленный системой автоматической установки cms LTD BEGET
+In order to start the issue tracker
 
-=> Действия описанные ниже необходимо выполнять в docker-окружении выполнив команду ниже <=
-$ ssh localhost -p222
+1. Clone repository 
+   >>> git clone git@github.com:helvrud/issuetracker.git
 
-для установки дополнительных модулей используйте pip
-сам джанго располагается в папке /home/h/helvruxw/issue.kunsthaus.ru/public_html/venv/lib/python2.7/site-packages
+2. Go to issuetracker/
+   >>> cd issuetracker/
 
-для начала надо переключиться на текущий virtualenv
-заходим в папку с проектом
+3. Create and activate virtual environment    
+   >>> virtualenv -p python2 venv
+   >>> . venv/bin/activate
 
-$ cd /home/h/helvruxw/issue.kunsthaus.ru/public_html
-$ source venv/bin/activate
+4. install the requirements
+   >>> pip install -r requirements.txt
 
-проверяем правильно ли определился путь до pip:
-$ which pip
-/home/h/helvruxw/issue.kunsthaus.ru/public_html/venv/bin/pip
+5. Start the application
+   >>> cd issue
+   >>> .manage.py runserver
+   
+6. Open the address http://127.0.0.1:8000 in web browser
 
-теперь мы можем пользоваться pip'ом для установки модулей не указывая полного пути до исполняемого файла:
 
-$ pip install <Module-name>
+There are few users registered in database
+    admin with password "79kq622z"
+    stuff with the same password
+    also kvint and marcell with administrative privelegies
 
-где <Module-name> имя модуля который мы хотим установить
+Several issues already created ...
+In order to create an issue click on the "Add issue" (as admin)
+To make the issue closed (solved) click on it then put a tick "clised". 
+The solver automatically will be set to currently logged in user.
+Administrators are allowed to edit the issues through the administration 
+panel, i.e. by the address http://127.0.0.1:8000/admin
 
-Для перезапуска passenger в папке проекта достаточно выполнить команду touch на пустом файлике restart.txt
+I hope that it works well...
 
-$ pwd
-/home/h/helvruxw/issue.kunsthaus.ru/public_html/HelloDjango/HelloDjango/tmp
-$ touch restart.txt
+The clone of the application is available by the address http://issue.kunsthaus.ru
