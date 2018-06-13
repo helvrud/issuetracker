@@ -25,6 +25,9 @@ There are few users registered in database
     stuff with the same password
     also kvint and marcell with administrative privelegies
 
+"admin" is allowed to change and delete the issues
+"stuf" is allowed to create the issues and to change status closed/open
+
 Several issues already created ...
 In order to create an issue click on the "Add issue" (as admin)
 To make the issue closed (solved) click on it then put a tick "clised". 
@@ -35,3 +38,4 @@ panel, i.e. by the address http://127.0.0.1:8000/admin
 I hope that it works well...
 
 The clone of the application is available by the address http://issue.kunsthaus.ru
+
