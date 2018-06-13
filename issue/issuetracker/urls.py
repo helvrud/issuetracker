@@ -10,6 +10,18 @@ from django.contrib.auth.views import login, logout
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.views.static import serve
 
+
+# -*- coding: utf-8 -*-
+from __future__ import absolute_import, print_function, unicode_literals
+
+from cms.sitemaps import CMSSitemap
+from django.contrib import admin
+from django.contrib.sitemaps.views import sitemap
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from django.views.static import serve
+
+admin.autodiscover()
+
 urlpatterns = [
         url(r'^$', IssuesListView.as_view(), name='index'),
         url(r'^(?P<pk>[0-9]+)/$', IssueDetailView.as_view(), name='detail'),
